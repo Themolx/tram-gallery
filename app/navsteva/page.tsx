@@ -1,6 +1,5 @@
 import { getExhibitionsByStatus, getExhibitionStations, getStationsByIds } from "@/lib/db";
 import type { Exhibition, Station } from "@/types";
-import GalleryMapWrapper from "@/components/GalleryMapWrapper";
 
 export default async function NavstevaPage() {
   let exhibitions: Exhibition[] = [];
@@ -47,8 +46,6 @@ export default async function NavstevaPage() {
         {[
           { label: "Otevírací doba", value: "0:00–24:00", note: "Denně, tramvaje jezdí vždy" },
           { label: "Vstupné", value: "Zdarma", note: "Součástí jízdného DPP" },
-          { label: "Médium", value: "Paste-up", note: "Linoryt, papír" },
-          { label: "Výstavní plochy", value: `${activeStations.length}`, note: "Aktivních zastávek" },
         ].map((item, i) => (
           <div
             key={i}
@@ -67,20 +64,6 @@ export default async function NavstevaPage() {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="relative" style={{ height: "60vh", minHeight: 400 }}>
-        {activeStations.length === 0 ? (
-          <div className="flex items-center justify-center h-full border-b-4 border-black">
-            <p className="type-label" style={{ color: "#aaa" }}>Žádné aktivní výstavní plochy</p>
-          </div>
-        ) : (
-          <GalleryMapWrapper
-            exhibitions={exhibitions}
-            activeStations={activeStations}
-            exhibitionLines={exhibitionLines}
-          />
-        )}
       </div>
 
       <div className="bar bar-thick" />

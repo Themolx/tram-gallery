@@ -2,12 +2,14 @@ export const metadata = {
   title: "Jak nainstalovat — Tram Gallery",
 };
 
+const DPP = "#E3000B";
+
 const FRAME_FORMATS = [
   {
     name: "A3",
     width: "29,7 cm",
     height: "42,0 cm",
-    note: "Nejčastější formát. Pasuje do menších označníkových rámečků na zastávkách bez přístřešku i do části větších rámů.",
+    note: "Nejčastější formát.",
     w: 30,
     h: 42,
   },
@@ -15,7 +17,7 @@ const FRAME_FORMATS = [
     name: "A2",
     width: "42,0 cm",
     height: "59,4 cm",
-    note: "Větší rámy na přístřešcích. Vždy změřte konkrétní rámeček před tiskem — rozměry se liší zastávka od zastávky.",
+    note: "Formát náhradní autobusové dopravy",
     w: 42,
     h: 59,
   },
@@ -24,165 +26,179 @@ const FRAME_FORMATS = [
 const STEPS = [
   {
     num: "01",
-    title: "Změřte rámeček",
-    text: "Každá zastávka je jiná. Před tiskem změřte konkrétní rámeček, který chcete obsadit. Standardní jsou A3 a A2, ale přesné rozměry ověřte na místě.",
+    title: "Najděte prázdný rámeček",
+    text: "Ne každý rámeček je volný. Hledejte ty, kde není nic, nebo kde je stará reklama. Nikdy nepřelepujte informace o mimořádných výlukách nebo změnách v dopravě. Ty tam jsou pro lidi, kteří je potřebují.",
   },
   {
     num: "02",
-    title: "Připravte tisk",
-    text: "Tiskněte na papír gramáže 90–160 g/m². Formát přesně dle rámečku — papír musí přesně sedět, není čím ho držet.",
+    title: "Připravte dílo",
+    text: "Formát A3 (29,7 x 42,0 cm). Papír gramáže kolem 220 g/m². Drží tvar, nevlní se, vejde se za plastový kryt. Tenčí papír se kroutí, tlustší nejde zasunout. Tiskněte, malujte, tiskněte z lina. Médium je na vás.",
   },
   {
     num: "03",
-    title: "Vložte do rámečku",
-    text: "Papír jednoduše vložte do rámu. Bez lepidla, bez pasty, bez fixace. Dílo drží samo — třením, tíhou nebo přítlačnou lištou rámu.",
+    title: "Odšroubujte rámeček",
+    text: "Rámečky jsou zajištěné šrouby s bitem [TBD]. Odšroubujte, opatrně sejměte plastový kryt. Za ním je prostor kam se vkládá papír.",
   },
   {
     num: "04",
+    title: "Vložte a zašroubujte zpět",
+    text: "Papír zasuňte za plastový kryt do slotu. Nasaďte kryt zpět a zašroubujte. Zastávku nechte tak, jak jste ji našli. Žádné stopy, žádný nepořádek. Dílo je za sklem, chráněné před deštěm.",
+  },
+  {
+    num: "05",
     title: "Zdokumentujte",
-    text: "Vyfotografujte instalaci. Pokud chcete dílo přidat na tuto stránku, napište nám — přidáme ho do plánu výstavy.",
+    text: "Vyfoťte instalaci. Pokud chcete dílo zařadit do programu Tram Gallery, napište nám název zastávky, linku, datum a fotku.",
   },
 ];
 
 export default function InstalacePage() {
   return (
     <div>
-      {/* Header */}
-      <div className="px-6 pt-10 pb-8">
-        <h1 className="type-xl mb-2">Jak nainstalovat</h1>
-        <p className="type-body mt-4" style={{ maxWidth: 640, fontWeight: 400 }}>
-          Tram Gallery je otevřená platforma bez kurátora. Nerozhodujeme, co je a co není relevantní.
-          Každý může nainstalovat dílo — stačí papír a volný rámeček.
-        </p>
-        <div className="bar bar-thin mt-8" />
-      </div>
+      {/* Top accent */}
+      <div style={{ background: DPP, height: 8 }} />
 
-      {/* No glue statement */}
-      <div className="bar bar-thick" />
-      <div className="px-6 py-12 border-b-4 border-black" style={{ background: "#000", color: "#fff" }}>
+      {/* Hero — hlavní sdělení */}
+      <div className="px-6 pt-10 pb-0">
+        <div className="type-label mb-4" style={{ color: DPP }}>Tram Gallery / Instalace</div>
         <div
           className="font-black uppercase leading-none"
-          style={{ fontSize: "clamp(28px, 5vw, 64px)", letterSpacing: "-0.03em", maxWidth: 900 }}
+          style={{
+            fontSize: "clamp(56px, 12vw, 160px)",
+            letterSpacing: "-0.05em",
+            lineHeight: 0.85,
+          }}
         >
-          Na tuto galerii se nelepi.
+          Každý<br />
+          <span style={{ color: DPP }}>může.</span>
         </div>
-        <p className="mt-6" style={{ fontSize: 15, fontWeight: 400, maxWidth: 560, opacity: 0.7 }}>
-          Žádné lepidlo, žádná pasta. Papír se pouze vkládá do rámu. Dílo existuje, dokud ho město neodstraní nebo vítr nevytáhne.
+      </div>
+
+      <div className="bar bar-thick mt-10" />
+
+      {/* Perex — democratic statement */}
+      <div className="px-6 py-10 border-b-4 border-black" style={{ background: "#000", color: "#fff" }}>
+        <p
+          className="font-black leading-tight"
+          style={{ fontSize: "clamp(18px, 3vw, 32px)", maxWidth: 800, letterSpacing: "-0.01em" }}
+        >
+          Tram Gallery je otevřená galerie bez kurátora. Výstavní prostory jsou prázdné reklamní rámečky na pražských tramvajových zastávkách. Pokud je rámeček prázdný nebo obsahuje reklamu, je váš.
+          <span style={{ color: DPP }}> Stačí papír, šroubovák a něco, co chcete říct.</span>
         </p>
       </div>
 
       {/* Frame formats */}
       <div className="bar bar-thick" />
-      <div className="px-6 py-10">
-        <h2 className="type-lg mb-2">Formáty rámečků na pražských zastávkách</h2>
-        <p className="type-body mb-8" style={{ fontWeight: 400, color: "#555" }}>
-          Hlavní formáty jsou A3 a A2. Vždy změřte konkrétní zastávku před tiskem.
-        </p>
-        <div className="grid gap-0 lg:grid-cols-2">
-          {FRAME_FORMATS.map((fmt, i) => (
+      <div className="px-6 pt-10 pb-0">
+        <h2
+          className="font-black uppercase leading-none mb-8"
+          style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.03em" }}
+        >
+          Formáty rámečků
+        </h2>
+      </div>
+      <div className="grid lg:grid-cols-2">
+        {FRAME_FORMATS.map((fmt, i) => (
+          <div
+            key={fmt.name}
+            className="px-6 py-8 border-b-4 border-black"
+            style={{ borderRight: i === 0 ? "4px solid black" : "none" }}
+          >
             <div
-              key={fmt.name}
-              className="p-6 border-b-4 border-black"
-              style={{ borderRight: i === 0 ? "4px solid black" : "none" }}
+              className="font-black leading-none mb-6"
+              style={{ fontSize: "clamp(80px, 14vw, 160px)", letterSpacing: "-0.05em", color: DPP, lineHeight: 0.85 }}
             >
-              <div className="type-label mb-4" style={{ color: "#888" }}>Formát</div>
+              {fmt.name}
+            </div>
+            <div className="flex items-end gap-6 mb-5">
               <div
-                className="font-black leading-none mb-2"
-                style={{ fontSize: "clamp(40px, 6vw, 72px)", letterSpacing: "-0.04em" }}
-              >
-                {fmt.name}
-              </div>
-
-              {/* Visual size indicator — relative to each other */}
-              <div className="my-6 flex items-end gap-4">
+                style={{
+                  width: Math.round(fmt.w * 1.3),
+                  height: Math.round(fmt.h * 1.3),
+                  background: "#000",
+                  flexShrink: 0,
+                  maxWidth: 65,
+                  maxHeight: 95,
+                }}
+              />
+              <div>
+                <div className="type-label mb-1" style={{ color: "#aaa" }}>Šířka x výška</div>
                 <div
-                  style={{
-                    width: fmt.w * 1.2,
-                    height: fmt.h * 1.2,
-                    background: "#000",
-                    flexShrink: 0,
-                    maxWidth: 80,
-                    maxHeight: 110,
-                  }}
-                />
-                <div>
-                  <div className="type-label mb-1" style={{ color: "#aaa" }}>Šířka × výška</div>
-                  <div
-                    className="font-black"
-                    style={{ fontSize: "clamp(18px, 2.5vw, 28px)", letterSpacing: "-0.02em" }}
-                  >
-                    {fmt.width} × {fmt.height}
-                  </div>
+                  className="font-black"
+                  style={{ fontSize: "clamp(20px, 2.5vw, 28px)", letterSpacing: "-0.02em" }}
+                >
+                  {fmt.width}<br />{fmt.height}
                 </div>
               </div>
-
-              <p className="type-body" style={{ fontWeight: 400 }}>{fmt.note}</p>
             </div>
-          ))}
-        </div>
-        <div className="px-6 py-4 border-b-4 border-black" style={{ background: "#f5f5f0" }}>
-          <p className="type-label" style={{ color: "#888" }}>
-            Přesný formát (motiv, rozměry, typ papíru) bude doplněn. Zatím platí: změřte, vytiskněte, vložte.
-          </p>
-        </div>
+            <p style={{ fontWeight: 400, fontSize: 14, color: "#555" }}>{fmt.note}</p>
+          </div>
+        ))}
       </div>
+      
 
       {/* Steps */}
       <div className="bar bar-thick" />
-      <div className="px-6 py-10">
-        <h2 className="type-lg mb-8">Postup</h2>
-        <div className="grid gap-0">
-          {STEPS.map((step) => (
+      <div className="px-6 pt-10 pb-0">
+        <h2
+          className="font-black uppercase leading-none mb-8"
+          style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.03em" }}
+        >
+          Postup
+        </h2>
+      </div>
+      <div>
+        {STEPS.map((step) => (
+          <div
+            key={step.num}
+            className="grid border-b-4 border-black"
+            style={{ gridTemplateColumns: "100px 1fr" }}
+          >
             <div
-              key={step.num}
-              className="grid grid-cols-[80px_1fr] border-b-4 border-black last:border-b-0 py-6"
+              className="font-black leading-none flex items-start pt-6 pl-6 pb-6"
+              style={{ fontSize: "clamp(40px, 6vw, 64px)", letterSpacing: "-0.05em", color: DPP, lineHeight: 0.85 }}
             >
-              <div
-                className="font-black leading-none"
-                style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.04em", color: "#ddd" }}
-              >
-                {step.num}
-              </div>
-              <div>
-                <div className="type-md mb-2" style={{ fontSize: "clamp(15px, 2vw, 18px)" }}>
-                  {step.title}
-                </div>
-                <p className="type-body" style={{ fontWeight: 400 }}>{step.text}</p>
-              </div>
+              {step.num}
             </div>
-          ))}
-        </div>
+            <div className="py-6 pr-6 pl-6 border-l-4 border-black">
+              <div
+                className="font-black uppercase mb-2"
+                style={{ fontSize: "clamp(13px, 1.8vw, 16px)", letterSpacing: "0.06em" }}
+              >
+                {step.title}
+              </div>
+              <p style={{ fontWeight: 400, fontSize: 14, lineHeight: 1.6 }}>{step.text}</p>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Contact */}
       <div className="bar bar-thick" />
       <div className="px-6 py-12">
-        <h2 className="type-lg mb-6">Kontakt</h2>
         <div className="grid gap-8 lg:grid-cols-2" style={{ maxWidth: 800 }}>
           <div>
-            <p className="type-body mb-4" style={{ fontWeight: 400 }}>
-              Chcete být součástí konkrétní výstavy? Potřebujete poradit s formátem nebo tiskem? Chcete poslat fotodokumentaci?
+            <div className="type-label mb-4" style={{ color: DPP }}>Kontakt</div>
+            <p style={{ fontWeight: 400, fontSize: 14, marginBottom: 16, lineHeight: 1.6 }}>
+              Pošlete nám: název zastávky, číslo linky, datum instalace, fotku. Zařadíme vás do aktuální výstavy.
             </p>
-            <p className="type-body" style={{ fontWeight: 400 }}>
-              Napište na{" "}
-              <a
-                href="mailto:tramgallery@protonmail.com"
-                className="font-black"
-                style={{ color: "inherit", textDecoration: "underline" }}
-              >
-                tramgallery@protonmail.com
-              </a>
-            </p>
+            <a
+              href="mailto:tramgallery@protonmail.com"
+              className="font-black"
+              style={{ fontSize: "clamp(15px, 2vw, 22px)", color: DPP, textDecoration: "underline", letterSpacing: "-0.01em" }}
+            >
+              tramgallery@protonmail.com
+            </a>
           </div>
-          <div className="frame p-6">
-            <div className="type-label mb-3" style={{ color: "#888" }}>Jedno pravidlo</div>
-            <p className="type-body" style={{ fontWeight: 400 }}>
-              Nevkládejte přes díla ostatních. Respektujte, že rámeček obsadil někdo jiný. Najděte prázdný.
+          <div className="p-6 border-4 border-black">
+            <div className="type-label mb-3" style={{ color: DPP }}>Jedno pravidlo</div>
+            <p style={{ fontWeight: 400, fontSize: 14, lineHeight: 1.6 }}>
+              Respektujte ostatní. Pokud je v rámečku dílo někoho jiného, najděte prázdný. A nikdy nepřekrývejte provozní informace DPP. Výluky, změny tras, mimořádnosti. Ty tam jsou pro cestující, ne pro nás.
             </p>
           </div>
         </div>
       </div>
 
+      <div style={{ background: DPP, height: 8 }} />
       <div className="bar bar-thick" />
     </div>
   );
