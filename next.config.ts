@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const isStaticExport = process.env.STATIC_EXPORT === "true";
+const isCI = process.env.CI === "true";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
@@ -10,9 +12,12 @@ const nextConfig: NextConfig = {
     assetPrefix: basePath,
     trailingSlash: true,
   }),
-  turbopack: {
-    root: "/Users/martintomek/.gemini/antigravity/scratch/tram-gallery",
-  },
+  // turbopack.root only needed locally (multiple lockfiles on dev machine)
+  ...(!isCI && {
+    turbopack: {
+      root: path.resolve(__dirname),
+    },
+  }),
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals = config.externals || [];
