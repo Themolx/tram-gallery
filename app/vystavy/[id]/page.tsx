@@ -81,40 +81,54 @@ export default async function ExhibitionPage({
           </div>
 
           <div className="flex-1">
-            <div className="type-label mb-3" style={{ color: "rgba(0,0,0,0.55)" }}>
-              {statusLabel}
-              {" · "}
-              {new Date(exhibition.openedAt).toLocaleDateString("cs-CZ", {
-                day: "numeric",
-                month: "long",
-                year: "numeric",
-              })}
-              {exhibition.closedAt
-                ? ` — ${new Date(exhibition.closedAt).toLocaleDateString("cs-CZ", { day: "numeric", month: "long", year: "numeric" })}`
-                : exhibition.status === "current"
-                ? " — probíhá"
-                : ""}
-            </div>
+            {/* Artist — most prominent */}
+            {exhibition.artist && exhibition.artist !== "—" && (
+              <div
+                className="font-black uppercase leading-none text-white mb-2"
+                style={{ fontSize: "clamp(13px, 1.8vw, 18px)", letterSpacing: "0.12em", opacity: 0.7 }}
+              >
+                {exhibition.artist}
+              </div>
+            )}
 
+            {/* Exhibition name */}
             <h1
               className="font-black uppercase leading-none text-white"
               style={{
-                fontSize: "clamp(32px, 6vw, 80px)",
-                letterSpacing: "-0.03em",
-                lineHeight: 0.9,
+                fontSize: "clamp(40px, 7vw, 96px)",
+                letterSpacing: "-0.04em",
+                lineHeight: 0.88,
               }}
             >
-              {exhibition.title}
+              {exhibition.subtitle ?? exhibition.title}
             </h1>
 
-            {exhibition.subtitle && (
-              <p
-                className="mt-4 text-white"
-                style={{ fontSize: 15, fontWeight: 400, opacity: 0.85 }}
+            {/* Install date — prominent */}
+            <div className="mt-5 flex items-center gap-3">
+              <div
+                className="font-black text-white"
+                style={{ fontSize: "clamp(22px, 3vw, 36px)", letterSpacing: "-0.02em", lineHeight: 1 }}
               >
-                {exhibition.subtitle}
-              </p>
-            )}
+                {new Date(exhibition.openedAt).toLocaleDateString("cs-CZ", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </div>
+              <div className="type-label" style={{ color: "rgba(255,255,255,0.55)" }}>
+                {statusLabel}
+                {exhibition.closedAt
+                  ? ` — ${new Date(exhibition.closedAt).toLocaleDateString("cs-CZ", { day: "numeric", month: "long", year: "numeric" })}`
+                  : exhibition.status === "current"
+                  ? " — probíhá"
+                  : ""}
+              </div>
+            </div>
+
+            {/* Tram line subtitle */}
+            <div className="mt-3 type-label" style={{ color: "rgba(0,0,0,0.4)" }}>
+              {exhibition.title}
+            </div>
           </div>
         </div>
       </div>
@@ -126,7 +140,7 @@ export default async function ExhibitionPage({
         {/* Left: curatorial text + visit info */}
         <div className="lg:pr-12 lg:border-r-4 lg:border-black">
           {/* Metadata strip */}
-          <div className="flex flex-wrap gap-x-8 gap-y-2 mb-8 pb-6 border-b-4 border-black">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 mb-8 pb-6 border-b-4 border-black">
             <div>
               <div className="type-label mb-1" style={{ color: "#888" }}>Linka</div>
               <div

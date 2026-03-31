@@ -38,7 +38,8 @@ export const EXHIBITIONS: Exhibition[] = [
   {
     id: "ex-22-bila-hora",
     title: "LINKA 22: BÍLÁ HORA — ÚJEZD",
-    subtitle: "Průjezd dějinami",
+    subtitle: "Chomps",
+    artist: "Martin Tomek",
     color: "#E3000B",
     lineNumber: 22,
     direction: "směr Nádraží Hostivař",
@@ -49,16 +50,17 @@ export const EXHIBITIONS: Exhibition[] = [
     closedAt: undefined,
     curatorialText: `Linka 22 prochází Prahou jako přímka přes sedm staletí zástavby. Z Bílé Hory — místa porážky stavovského povstání 1620 — přes Hradčany, Malou Stranu, až k Újezdu pod Petřínem.
 
-Výstava **Průjezd dějinami** obsazuje dvanáct zastávek na tomto úseku. Každý reklamní rámeček nese linoryt formátu A1. Motiv se opakuje a variuje — jako zastávky na lince, jako rytmus kol na kolejích.
+Výstava **Chomps** obsazuje dvanáct zastávek na tomto úseku. Každý reklamní rámeček nese tisk formátu A2/A3. Motiv se opakuje a variuje — jako zastávky na lince, jako rytmus kol na kolejích.
 
-Médium paste-up je záměrné: práce existuje jen do té doby, než ji někdo sundá nebo přelepí. Trvání výstavy závisí na město, počasí a náhodě.`,
-    visitInfo: `Nastupte na tramvaj linky 22 na zastávce **Bílá Hora** (směr Nádraží Hostivař). Jednotlivá díla najdete v reklamních rámečcích na označnících zastávek. Doporučujeme vystoupit a prohlédnout si každou zastávku zvlášť. Výstava končí na zastávce Újezd.`,
+Díla jsou vložena do volných reklamních rámečků — bez lepidla, bez povolení. Existují, dokud je město neodstraní.`,
+    visitInfo: `Nastupte na tramvaj linky 22 na zastávce **Bílá Hora** (směr Nádraží Hostivař). Díla najdete v reklamních rámečcích na označnících zastávek. Výstava končí na zastávce Újezd.`,
     createdAt: "2026-01-15T10:00:00.000Z",
   },
   {
     id: "ex-17-namrep",
     title: "LINKA 17: BÍLÁ LABUŤ — JIRÁSKOVO NÁM.",
-    subtitle: "Nábřeží",
+    subtitle: "Golden Shit",
+    artist: "Tomáš Vrána",
     color: "#0057A8",
     lineNumber: 17,
     direction: "směr Průhonice",
@@ -69,7 +71,7 @@ Médium paste-up je záměrné: práce existuje jen do té doby, než ji někdo 
     closedAt: undefined,
     curatorialText: `Sedm zastávek podél Vltavy. Linka 17 kopíruje nábřeží od Starého Města přes Národní třídu k Jiráskovu náměstí — historická trasa, která existuje od roku 1891.
 
-Výstava **Nábřeží** pracuje s motivem vody a pohybu. Linoryty zobrazují řezy vlnami, příčné průřezy proudu — abstraktní topografie míst, kudy denně projíždí tisíce lidí bez zastavení.`,
+Výstava **Golden Shit** pracuje s motivem hodnoty a odpadku. Tisky jsou vloženy do volných reklamních rámečků bez lepidla — čistě fyzickou přítomností papíru v rámu.`,
     visitInfo: `Linka 17, směr Průhonice. Nastoupte na Bílé labuti nebo Náměstí Republiky. Výstava končí na Jiráskově náměstí.`,
     createdAt: "2026-02-10T10:00:00.000Z",
   },
@@ -77,6 +79,7 @@ Výstava **Nábřeží** pracuje s motivem vody a pohybu. Linoryty zobrazují ř
     id: "ex-9-palmovka",
     title: "LINKA 9: PALMOVKA — ČERNÝ MOST",
     subtitle: "Periferie",
+    artist: "—",
     color: "#00843D",
     lineNumber: 9,
     direction: "směr Spojovací",
@@ -85,9 +88,7 @@ Výstava **Nábřeží** pracuje s motivem vody a pohybu. Linoryty zobrazují ř
     status: "upcoming",
     openedAt: "2026-05-01T00:00:00.000Z",
     closedAt: undefined,
-    curatorialText: `Linka 9 na úseku Palmovka–Černý most prochází územím, které nikdy nebylo v centru pozornosti. Sídliště, průmyslové haly, obchodní centra.
-
-Připravovaná výstava **Periferie** bude první, která pracuje výhradně s touto geografií — s krajinou, která se nedostává na pohlednice.`,
+    curatorialText: `Připravovaná výstava na lince 9, úsek Palmovka–Černý most. Více informací brzy.`,
     visitInfo: "",
     createdAt: "2026-03-01T10:00:00.000Z",
   },

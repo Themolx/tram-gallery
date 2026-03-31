@@ -41,15 +41,6 @@ export default function OGaleriiPage() {
             <p>
               Cestující projíždí galerií, aniž to ví. Nebo ví. To je na nich.
             </p>
-            <p>
-              Reklamní plocha je obsazena jiným druhem obrazu. Médium je paste-up a linoryt —
-              reprodukovatelný, fyzický, dočasný. Dílo existuje do té doby, než ho někdo sundá.
-            </p>
-            <p>
-              Web funguje jako legitimní galerijní web. S výstavami, kurátorskými texty,
-              informacemi pro návštěvníky. Žádné fotografie instalací.
-              Fyzický zážitek zůstává na ulici.
-            </p>
           </div>
         </div>
 
@@ -58,7 +49,7 @@ export default function OGaleriiPage() {
 
           <div className="flex flex-col gap-0">
             {[
-              { label: "Umělec", value: "Ptáček / Chomps" },
+              { label: "Umělci", value: "Martin Tomek, Tomáš Vrána" },
               { label: "Médium", value: "Paste-up, linoryt" },
               { label: "Výstavní prostory", value: "Reklamní rámečky na pražských tramvajových zastávkách" },
               { label: "Vstupné", value: "Zdarma (jízdenka DPP)" },
@@ -78,28 +69,6 @@ export default function OGaleriiPage() {
               </div>
             ))}
           </div>
-        </div>
-      </div>
-
-      <div className="bar bar-thick" />
-
-      {/* Inspirations */}
-      <div className="px-6 py-10">
-        <div className="type-label mb-6" style={{ color: "#888" }}>Inspirace</div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-          {[
-            "László Moholy-Nagy",
-            "El Lissitzky",
-            "Karel Teige",
-            "DPP signage",
-          ].map((name) => (
-            <div
-              key={name}
-              className="frame px-4 py-3"
-            >
-              <div className="type-label">{name}</div>
-            </div>
-          ))}
         </div>
       </div>
 

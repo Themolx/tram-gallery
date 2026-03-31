@@ -11,7 +11,8 @@ export type ExhibitionStatus = 'current' | 'upcoming' | 'past';
 export interface Exhibition {
   id: string;
   title: string;               // "LINKA 12: LEHOVEC — BALABENKA"
-  subtitle?: string;           // optional claim
+  subtitle?: string;           // optional claim / název výstavy
+  artist?: string;             // jméno umělce/ce
   color: string;               // HEX barva výstavy
   lineNumber: number;          // číslo tramvajové linky
   direction: string;           // "směr Lehovec"

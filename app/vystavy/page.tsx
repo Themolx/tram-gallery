@@ -29,31 +29,37 @@ function ExhibitionRow({ ex }: { ex: Exhibition }) {
           </div>
 
           <div className="flex-1">
-            <div className="type-label mb-1" style={{ color: "#888" }}>
-              {new Date(ex.openedAt).toLocaleDateString("cs-CZ", {
-                day: "numeric",
-                month: "numeric",
-                year: "numeric",
-              })}
-              {ex.closedAt
-                ? ` — ${new Date(ex.closedAt).toLocaleDateString("cs-CZ", { day: "numeric", month: "numeric", year: "numeric" })}`
-                : ex.status === "current"
-                ? " — probíhá"
-                : ""}
-              {" · "}
-              {ex.direction}
-            </div>
+            {/* Artist + exhibition name */}
+            {ex.artist && ex.artist !== "—" && (
+              <div className="type-label mb-0.5" style={{ color: "#555" }}>{ex.artist}</div>
+            )}
             <div
               className="font-black uppercase leading-none"
-              style={{ fontSize: "clamp(16px, 2vw, 24px)", letterSpacing: "-0.02em" }}
+              style={{ fontSize: "clamp(18px, 2.5vw, 30px)", letterSpacing: "-0.03em" }}
             >
-              {ex.title}
+              {ex.subtitle ?? ex.title}
             </div>
-            {ex.subtitle && (
-              <div className="mt-1" style={{ fontSize: 12, color: "#666" }}>
-                {ex.subtitle}
-              </div>
-            )}
+            {/* Install date prominent */}
+            <div className="flex items-center gap-2 mt-2">
+              <span
+                className="font-black"
+                style={{ fontSize: "clamp(13px, 1.5vw, 16px)", letterSpacing: "-0.01em" }}
+              >
+                {new Date(ex.openedAt).toLocaleDateString("cs-CZ", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </span>
+              <span className="type-label" style={{ color: "#aaa" }}>
+                {ex.closedAt
+                  ? `— ${new Date(ex.closedAt).toLocaleDateString("cs-CZ", { day: "numeric", month: "numeric", year: "numeric" })}`
+                  : ex.status === "current"
+                  ? "— probíhá"
+                  : ""}
+              </span>
+            </div>
+            <div className="type-label mt-1" style={{ color: "#bbb" }}>{ex.title}</div>
           </div>
 
           <div className="type-label shrink-0 group-hover:ex-text" style={{ color: "#bbb" }}>→</div>
