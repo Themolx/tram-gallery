@@ -12,12 +12,9 @@ const nextConfig: NextConfig = {
     assetPrefix: basePath,
     trailingSlash: true,
   }),
-  // turbopack.root only needed locally (multiple lockfiles on dev machine)
-  ...(!isCI && {
-    turbopack: {
-      root: path.resolve(__dirname),
-    },
-  }),
+  // Locally: set root to avoid multiple-lockfile confusion
+  // In CI: empty turbopack config to silence webpack+turbopack coexistence warning
+  turbopack: isCI ? {} : { root: path.resolve(__dirname) },
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals = config.externals || [];
