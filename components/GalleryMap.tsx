@@ -4,7 +4,7 @@ import type { Exhibition, Station } from "@/types";
 
 interface ExhibitionLine {
   exhibition: Exhibition;
-  stations: Station[]; // ordered
+  stations: Station[];
 }
 
 interface GalleryMapProps {
@@ -15,7 +15,10 @@ interface GalleryMapProps {
 
 export default function GalleryMap({ activeStations, exhibitionLines }: GalleryMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
   const mapInstance = useRef<unknown>(null);
+  // refs to each marker div so we can move them without React re-renders
+  const markerEls = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
     if (!mapRef.current || mapInstance.current) return;
@@ -25,6 +28,7 @@ export default function GalleryMap({ activeStations, exhibitionLines }: GalleryM
       on: (event: string, cb: () => void) => void;
       addSource: (id: string, source: object) => void;
       addLayer: (layer: object) => void;
+      project: (lngLat: [number, number]) => { x: number; y: number };
     } | null = null;
 
     const initMap = async () => {
@@ -40,12 +44,48 @@ export default function GalleryMap({ activeStations, exhibitionLines }: GalleryM
         style: mapStyle,
         center: [14.42, 50.075],
         zoom: 11.5,
+        maxZoom: 14,
       }) as typeof map;
 
       mapInstance.current = map;
 
+      // ── Create colored HTML markers in the overlay div ──────────────────
+      // (overlay is a sibling outside the grayscale filter)
+      if (overlayRef.current) {
+        overlayRef.current.innerHTML = "";
+        markerEls.current = activeStations.map(({ station, exhibition }) => {
+          const el = document.createElement("div");
+          el.style.cssText = `
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: ${exhibition.color};
+            border: 3px solid #000;
+            box-sizing: border-box;
+            pointer-events: none;
+            transform: translate(-9px, -9px);
+          `;
+          el.title = station.name;
+          overlayRef.current!.appendChild(el);
+          return el;
+        });
+      }
+
+      // ── Sync marker positions to map ─────────────────────────────────────
+      const syncMarkers = () => {
+        if (!map) return;
+        activeStations.forEach(({ station }, i) => {
+          const el = markerEls.current[i];
+          if (!el) return;
+          const { x, y } = map!.project([station.lng, station.lat]);
+          el.style.left = `${x}px`;
+          el.style.top = `${y}px`;
+        });
+      };
+
       map!.on("load", () => {
-        // ── Route lines per exhibition ────────────────────────────────────
+        // ── Route lines per exhibition ──────────────────────────────────
         for (const { exhibition, stations } of exhibitionLines) {
           if (stations.length < 2) continue;
 
@@ -61,20 +101,14 @@ export default function GalleryMap({ activeStations, exhibitionLines }: GalleryM
             },
           });
 
-          // Shadow stroke
           map!.addLayer({
             id: `line-shadow-${exhibition.id}`,
             type: "line",
             source: `line-${exhibition.id}`,
-            paint: {
-              "line-color": "#000",
-              "line-width": 7,
-              "line-opacity": 0.18,
-            },
+            paint: { "line-color": "#000", "line-width": 7, "line-opacity": 0.18 },
             layout: { "line-cap": "round", "line-join": "round" },
           });
 
-          // Colored route line
           map!.addLayer({
             id: `line-${exhibition.id}`,
             type: "line",
@@ -88,40 +122,11 @@ export default function GalleryMap({ activeStations, exhibitionLines }: GalleryM
           });
         }
 
-        // ── Active station dots ───────────────────────────────────────────
-        const geojson = {
-          type: "FeatureCollection" as const,
-          features: activeStations.map(({ station, exhibition }) => ({
-            type: "Feature" as const,
-            properties: { name: station.name, color: exhibition.color },
-            geometry: {
-              type: "Point" as const,
-              coordinates: [station.lng, station.lat],
-            },
-          })),
-        };
-
-        map!.addSource("active-stations", { type: "geojson", data: geojson });
-
-        map!.addLayer({
-          id: "stations-outer",
-          type: "circle",
-          source: "active-stations",
-          paint: { "circle-radius": 9, "circle-color": "#000" },
-        });
-        map!.addLayer({
-          id: "stations-color",
-          type: "circle",
-          source: "active-stations",
-          paint: { "circle-radius": 7, "circle-color": ["get", "color"] },
-        });
-        map!.addLayer({
-          id: "stations-inner",
-          type: "circle",
-          source: "active-stations",
-          paint: { "circle-radius": 2.5, "circle-color": "#fff" },
-        });
+        syncMarkers();
       });
+
+      // Update on every render frame (pan, zoom, etc.)
+      map!.on("render", syncMarkers);
     };
 
     initMap().catch(console.error);
@@ -129,17 +134,23 @@ export default function GalleryMap({ activeStations, exhibitionLines }: GalleryM
     return () => {
       map?.remove();
       mapInstance.current = null;
+      markerEls.current = [];
     };
   }, [activeStations, exhibitionLines]);
 
   return (
-    <div
-      ref={mapRef}
-      style={{
-        width: "100%",
-        height: "100%",
-        filter: "grayscale(1) contrast(1.08)",
-      }}
-    />
+    // Outer wrapper: positions the grayscale map + colored overlay as siblings
+    <div style={{ position: "relative", width: "100%", height: "100%" }}>
+      {/* Map canvas — grayscale */}
+      <div
+        ref={mapRef}
+        style={{ width: "100%", height: "100%", filter: "grayscale(1) contrast(1.08)" }}
+      />
+      {/* Colored markers overlay — NOT filtered */}
+      <div
+        ref={overlayRef}
+        style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden" }}
+      />
+    </div>
   );
 }
