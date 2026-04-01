@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 const links = [
   { href: "/", label: "Výstavy" },
   { href: "/archiv", label: "Archiv" },
-  { href: "/open-call", label: "Open Call" },
+  { href: "/open-call", label: "Výzva Zlobit" },
   { href: "/o-galerii", label: "O galerii" },
 ];
 

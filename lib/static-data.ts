@@ -16,15 +16,6 @@ export const STATIONS: Station[] = [
   { id: "L12-12", name: "Divadlo Gong",          lat: 50.102800, lng: 14.479100, lines: [12] },
   { id: "L12-13", name: "Balabenka",             lat: 50.104755, lng: 14.482805, lines: [12] },
 
-  // Linky 3·14·23 — centrum (screenshoty z hry garden)
-  { id: "G-01", name: "Lazarská",            lat: 50.077800, lng: 14.419500, lines: [3, 14, 23] },
-  { id: "G-02", name: "Vodičkova",           lat: 50.079700, lng: 14.424700, lines: [3, 14, 23] },
-  { id: "G-03", name: "Václavské náměstí",   lat: 50.080800, lng: 14.426000, lines: [3, 14, 23] },
-  { id: "G-04", name: "Jindřišská",          lat: 50.083300, lng: 14.427000, lines: [3, 14, 23] },
-  { id: "G-05", name: "Masarykovo nádraží",  lat: 50.087600, lng: 14.434000, lines: [3, 14, 23] },
-  { id: "G-06", name: "Bílá labuť",          lat: 50.090700, lng: 14.435400, lines: [3, 14, 23] },
-  { id: "G-07", name: "Florenc",             lat: 50.091600, lng: 14.440000, lines: [3, 14, 23] },
-
   // Linka 17 — úsek nábřeží (Golden Shit)
   { id: "U32Z1P", name: "Bílá labuť",          lat: 50.090168, lng: 14.435472, lines: [17] },
   { id: "U999R",  name: "Náměstí Republiky",   lat: 50.088000, lng: 14.429800, lines: [17] },
@@ -76,25 +67,6 @@ Výstava Golden Shit pracuje s motivem hodnoty a odpadku. Tisky jsou vloženy do
     visitInfo: `Linka 17, směr Průhonice. Nastoupte na Bílé labuti nebo Náměstí Republiky. Výstava končí na Jiráskově náměstí.`,
     createdAt: "2026-02-10T10:00:00.000Z",
   },
-  {
-    id: "ex-3-garden",
-    title: "LINKY 3 · 14 · 23: LAZARSKÁ — FLORENC",
-    subtitle: "screenshoty z hry garden",
-    artist: "Michal Tancjura",
-    color: "#1A7A3C",
-    lineNumbers: [3, 14, 23],
-    direction: "směr Florenc",
-    startStationId: "G-01",
-    endStationId: "G-07",
-    status: "current",
-    openedAt: "2026-03-31T00:00:00.000Z",
-    closedAt: undefined,
-    curatorialText: `Lazarská, Vodičkova, Václavské náměstí, Jindřišská, Masarykovo nádraží, Bílá labuť, Florenc. Sedm zastávek v centru Prahy — sdílený koridor linek 3, 14 a 23.
-
-Výstava screenshoty z hry garden přináší záznamy z digitální krajiny do fyzického prostoru zastávek. Tisky v reklamních rámečcích označníků.`,
-    visitInfo: `Nastupte na linku 3, 14 nebo 23 na zastávce Lazarská. Jedou stejným koridorem — díla jsou na zastávkách podél trasy. Výstava končí na Florenci.`,
-    createdAt: "2026-03-31T00:00:00.000Z",
-  },
 ];
 
 export const EXHIBITION_STATIONS: ExhibitionStation[] = [
@@ -112,15 +84,6 @@ export const EXHIBITION_STATIONS: ExhibitionStation[] = [
   { id: "es-12-11", exhibitionId: "ex-12-chomps", stationId: "L12-11", position: 10, hasInstallation: true  },
   { id: "es-12-12", exhibitionId: "ex-12-chomps", stationId: "L12-12", position: 11, hasInstallation: true  },
   { id: "es-12-13", exhibitionId: "ex-12-chomps", stationId: "L12-13", position: 12, hasInstallation: true  },
-
-  // Linky 3·14·23 — screenshoty z hry garden
-  { id: "es-g-01", exhibitionId: "ex-3-garden", stationId: "G-01", position: 0, hasInstallation: true  },
-  { id: "es-g-02", exhibitionId: "ex-3-garden", stationId: "G-02", position: 1, hasInstallation: true  },
-  { id: "es-g-03", exhibitionId: "ex-3-garden", stationId: "G-03", position: 2, hasInstallation: true  },
-  { id: "es-g-04", exhibitionId: "ex-3-garden", stationId: "G-04", position: 3, hasInstallation: true  },
-  { id: "es-g-05", exhibitionId: "ex-3-garden", stationId: "G-05", position: 4, hasInstallation: true  },
-  { id: "es-g-06", exhibitionId: "ex-3-garden", stationId: "G-06", position: 5, hasInstallation: true  },
-  { id: "es-g-07", exhibitionId: "ex-3-garden", stationId: "G-07", position: 6, hasInstallation: true  },
 
   // Linka 17 — Golden Shit
   { id: "es-17-01", exhibitionId: "ex-17-namrep", stationId: "U32Z1P", position: 0, hasInstallation: true  },
