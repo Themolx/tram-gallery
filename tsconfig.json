@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@react-pdf/renderer": ["./node_modules/@react-pdf/renderer/lib/react-pdf"]
     }
   },
   "include": [

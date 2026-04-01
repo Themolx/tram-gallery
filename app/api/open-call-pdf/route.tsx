@@ -32,7 +32,7 @@ export async function GET() {
     doc.on("end", () => resolve(Buffer.concat(chunks)));
   });
 
-  return new NextResponse(buffer, {
+  return new NextResponse(buffer as unknown as BodyInit, {
     headers: {
       "Content-Type": "application/pdf",
       "Content-Disposition": 'inline; filename="galerie-oznacnik-open-call.pdf"',
