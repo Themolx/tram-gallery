@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
           className="font-black uppercase text-white mb-8"
           style={{ fontSize: "clamp(32px, 8vw, 56px)", letterSpacing: "-0.03em", lineHeight: 0.9 }}
         >
-          TG<br />ADMIN
+          O<br />ADMIN
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">

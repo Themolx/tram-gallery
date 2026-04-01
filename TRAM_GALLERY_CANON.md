@@ -1,11 +1,11 @@
-# TRAM GALLERY — Canon dokumentace
+# GALERIE OZNAČNÍK — Canon dokumentace
 > Stav: 1. dubna 2026. Tento dokument slouží jako kompletní přehled projektu pro konzultace, rozvoj obsahu a technická rozhodnutí.
 
 ---
 
-## Co je Tram Gallery
+## Co je Galerie Označník
 
-Tram Gallery je galerie současného umění v Praze. Výstavní prostory jsou **prázdné reklamní rámečky na tramvajových zastávkách DPP**. Každý úsek tramvajové linky je samostatná výstava. Galerie nemá stálé sídlo — je rozptýlena po celém městě, v infrastruktuře každodenního pohybu.
+Galerie Označník je galerie současného umění v Praze. Výstavní prostory jsou **prázdné reklamní rámečky na tramvajových zastávkách DPP**. Každý úsek tramvajové linky je samostatná výstava. Galerie nemá stálé sídlo — je rozptýlena po celém městě, v infrastruktuře každodenního pohybu.
 
 Cestující projíždí galerií, aniž to ví. Nebo ví. To je na nich.
 
@@ -23,8 +23,8 @@ Cestující projíždí galerií, aniž to ví. Nebo ví. To je na nich.
 ## Web
 
 **Technologie:** Next.js 16.2.1 · TypeScript · Tailwind CSS v4
-**Repo:** https://github.com/Themolx/tram-gallery
-**Deploy:** GitHub Pages → https://themolx.github.io/tram-gallery/
+**Repo:** https://github.com/Themolx/oznacnik
+**Deploy:** GitHub Pages → https://themolx.github.io/oznacnik/
 **Data:** Statická data v `lib/static-data.ts` (připraveno pro Firebase swap)
 
 ### Design systém
@@ -188,7 +188,7 @@ Výstavy · Archiv · Open Call · O galerii
 
 **Hero:**
 > Praha — Galerie současného umění
-> **TRAM GALLERY**
+> **GALERIE OZNAČNÍK**
 
 **Perex:**
 > Výstavní prostory galerie jsou prázdné reklamní rámečky na pražských tramvajových zastávkách. Každý úsek linky je samostatná výstava. Cestující projíždí galerií, aniž to ví. Jízdenka DPP je vstupné.
@@ -242,7 +242,7 @@ Výstavy · Archiv · Open Call · O galerii
 ### O galerii `/o-galerii`
 
 #### Manifest
-> Tram Gallery je galerie současného umění, jejíž výstavní prostory jsou prázdné reklamní rámečky na pražských tramvajových zastávkách.
+> Galerie Označník je galerie současného umění, jejíž výstavní prostory jsou prázdné reklamní rámečky na pražských tramvajových zastávkách.
 >
 > Každý úsek tramvajové linky je samostatná výstava. Galerie nemá stálé sídlo — je rozptýlena po celém městě, v infrastruktuře každodenního pohybu.
 >
@@ -268,7 +268,7 @@ Výstavy · Archiv · Open Call · O galerii
 3. **Projíždějte galerií** — Na každé zastávce s instalací najdete v reklamním rámečku dílo. Díla jsou označena v plánu výstavy.
 
 #### Každý může
-> Tram Gallery je otevřená galerie bez kurátora. Pokud je rámeček prázdný nebo obsahuje reklamu, je váš. **Stačí papír, šroubovák a něco, co chcete říct.**
+> Galerie Označník je otevřená galerie bez kurátora. Pokud je rámeček prázdný nebo obsahuje reklamu, je váš. **Stačí papír, šroubovák a něco, co chcete říct.**
 
 #### Formáty rámečků
 | Formát | Šířka | Výška | Poznámka |
@@ -281,7 +281,7 @@ Výstavy · Archiv · Open Call · O galerii
 2. **Připravte dílo** — Formát A3 (29,7 x 42,0 cm). Papír gramáže kolem 220 g/m². Drží tvar, nevlní se, vejde se za plastový kryt. Tenčí papír se kroutí, tlustší nejde zasunout. Tiskněte, malujte, tiskněte z lina. Médium je na vás.
 3. **Odšroubujte rámeček** — Rámečky jsou zajištěné šrouby s bitem [TBD]. Odšroubujte, opatrně sejměte plastový kryt. Za ním je prostor kam se vkládá papír.
 4. **Vložte a zašroubujte zpět** — Papír zasuňte za plastový kryt do slotu. Nasaďte kryt zpět a zašroubujte. Zastávku nechte tak, jak jste ji našli. Žádné stopy, žádný nepořádek. Dílo je za sklem, chráněné před deštěm.
-5. **Zdokumentujte** — Vyfoťte instalaci. Pokud chcete dílo zařadit do programu Tram Gallery, napište nám název zastávky, linku, datum a fotku.
+5. **Zdokumentujte** — Vyfoťte instalaci. Pokud chcete dílo zařadit do programu Galerie Označník, napište nám název zastávky, linku, datum a fotku.
 
 #### Jedno pravidlo
 > Respektujte ostatní. Pokud je v rámečku dílo někoho jiného, najděte prázdný. A nikdy nepřekrývejte provozní informace DPP. Výluky, změny tras, mimořádnosti. Ty tam jsou pro cestující, ne pro nás.

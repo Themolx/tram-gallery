@@ -2,7 +2,7 @@ import { getExhibitionsByStatus } from "@/lib/db";
 import type { Exhibition } from "@/types";
 
 export const metadata = {
-  title: "O galerii — Tram Gallery",
+  title: "O galerii — Galerie Označník",
 };
 
 const DPP = "#E3000B";
@@ -36,7 +36,7 @@ const STEPS = [
   {
     num: "05",
     title: "Zdokumentujte",
-    text: "Vyfoťte instalaci. Pokud chcete dílo zařadit do programu Tram Gallery, napište nám název zastávky, linku, datum a fotku.",
+    text: "Vyfoťte instalaci. Pokud chcete dílo zařadit do programu Galerie Označník, napište nám název zastávky, linku, datum a fotku.",
   },
 ];
 
@@ -62,8 +62,8 @@ export default async function OGaleriiPage() {
               className="font-black uppercase leading-none"
               style={{ fontSize: "clamp(56px, 14vw, 160px)", letterSpacing: "-0.04em", lineHeight: 0.85 }}
             >
-              TRAM<br />
-              GALLERY
+              GALERIE<br />
+              OZNAČNÍK
             </h1>
           </div>
         </div>
@@ -76,7 +76,7 @@ export default async function OGaleriiPage() {
           <div className="type-label mb-6" style={{ color: "#888" }}>Manifest</div>
           <div className="prose-gallery">
             <p>
-              Tram Gallery je galerie současného umění, jejíž výstavní prostory jsou prázdné reklamní rámečky
+              Galerie Označník je galerie současného umění, jejíž výstavní prostory jsou prázdné reklamní rámečky
               na pražských tramvajových zastávkách.
             </p>
             <p>
@@ -183,7 +183,7 @@ export default async function OGaleriiPage() {
             className="font-black leading-tight"
             style={{ fontSize: "clamp(18px, 3vw, 32px)", maxWidth: 800, letterSpacing: "-0.01em" }}
           >
-            Tram Gallery je otevřená galerie bez kurátora. Pokud je rámeček prázdný nebo obsahuje reklamu, je váš.
+            Galerie Označník je otevřená galerie bez kurátora. Pokud je rámeček prázdný nebo obsahuje reklamu, je váš.
             <span style={{ color: DPP }}> Stačí papír, šroubovák a něco, co chcete říct.</span>
           </p>
         </div>

@@ -86,36 +86,32 @@ const s = StyleSheet.create({
   row: {
     flexDirection: "row",
     borderTop: `2 solid ${BLACK}`,
-    alignItems: "stretch",
+    alignItems: "flex-start",
   },
   rowNum: {
-    width: 80,
-    paddingLeft: 0,
-    paddingRight: 0,
-    paddingTop: 12,
-    paddingBottom: 12,
-    borderRight: `2 solid ${BLACK}`,
-    justifyContent: "center",
-    alignItems: "center",
+    width: 40,
+    paddingLeft: 4,
+    paddingTop: 4,
     flexShrink: 0,
   },
   rowNumText: {
-    fontSize: 44,
+    fontSize: 36,
     fontWeight: 700,
     color: DPP,
     lineHeight: 1,
   },
   rowContent: {
     flex: 1,
-    paddingLeft: 18,
+    borderLeft: `2 solid ${BLACK}`,
+    paddingLeft: 10,
     paddingRight: 36,
-    paddingTop: 12,
-    paddingBottom: 12,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   rowTitle: {
-    fontSize: 7.5,
+    fontSize: 12,
     fontWeight: 700,
-    letterSpacing: 1.5,
+    letterSpacing: 2.4,
     textTransform: "uppercase",
     color: BLACK,
     marginBottom: 4,
@@ -183,34 +179,34 @@ const s = StyleSheet.create({
 const ITEMS = [
   {
     num: "01",
-    title: "Co",
-    text: "Výstava v reklamních rámečcích na zastávkách jedné tramvajové linky. Každá zastávka je výstavní sál. Každý autor dostane blok zastávek po sobě. Celý úsek projdete pěšky nebo projedete tramvají.",
+    title: "Co hledáme",
+    text: "Autory pro kolektivní výstavu v pražských tramvajových zastávkách. Každý autor dostane blok zastávek na jedné lince. Díla budou vystavena v reklamních rámečcích, za sklem, přímo v ulici.",
   },
   {
     num: "02",
-    title: "Formát díla",
-    text: "Cokoliv co je na papíře. Série, variace, nebo pokaždé něco jiného. Dodáte hotové tisky, nainstalujeme je společně.",
+    title: "Formát",
+    text: "Papír, formát A3. Série, variace, nebo pokaždé něco jiného. Dodáte hotové tisky, nainstalujeme je společně.",
   },
   {
     num: "03",
-    title: "Vernisáž",
-    text: "Společná instalace. Sejdeme se, projdeme trasu, každý nainstaluje svá díla do rámečků. Datum bude upřesněno.",
+    title: "Instalace",
+    text: "Společná vernisáž. Projdeme trasu a každý nainstaluje svá díla do označníků. Datum a trasa budou upřesněny.",
   },
   {
     num: "04",
     title: "Životnost",
-    text: "Přibližně týden. Výstavu sundá DPP, počasí, nebo čas.",
+    text: "Přibližně týden. Výstavu sundá DPP, počasí, nebo čas. To je součást konceptu. Díla žijí ve veřejném prostoru a sdílejí jeho osud.",
   },
 ];
 
 export const OpenCallPDF = () => (
-  <Document title="Tram Gallery — Výzva Zlobit" author="Tram Gallery">
+  <Document title="Galerie Označník / Výzva Zlobit" author="Galerie Označník">
     <Page size="A4" style={s.page}>
       <View style={s.redBar} />
 
       {/* Hero */}
       <View style={s.hero}>
-        <Text style={s.heroLabel}>Tram Gallery — Praha</Text>
+        <Text style={s.heroLabel}>Galerie Označník Open Call</Text>
         <Text style={s.heroLine1}>VÝZVA</Text>
         <Text style={s.heroLine2}>ZLOBIT</Text>
       </View>
@@ -219,11 +215,21 @@ export const OpenCallPDF = () => (
       <View style={s.blackBar6} />
       <View style={s.perexBlock}>
         <Text style={s.perexText}>
-          {"Hledáme autory pro kolektivní výstavu\nv pražských tramvajových zastávkách. "}
-          <Text style={s.perexAccent}>Stačí papír a něco, co chcete říct.</Text>
+          {"Hledáme autory pro kolektivní výstavu\nv pražských tramvajových zastávkách."}
         </Text>
       </View>
       <View style={s.blackBar6} />
+
+      {/* Intro text */}
+      <View style={{ paddingLeft: 36, paddingRight: 36, paddingTop: 16, paddingBottom: 14 }}>
+        <Text style={{ fontSize: 9, fontWeight: 400, color: GRAY, lineHeight: 1.6 }}>
+          Galerie Označník je galerie současného umění, jejíž výstavní prostory jsou prázdné reklamní označníky pražských tramvajových zastávek. Každý úsek linky je samostatná výstava.
+        </Text>
+        <Text style={{ fontSize: 9, fontWeight: 400, color: GRAY, lineHeight: 1.6, marginTop: 6 }}>
+          Chystáme další výstavu a hledáme autory, kteří chtějí vystavit ve veřejném prostoru. Bez galerie, bez white cube, bez poplatků. Vernísáž by probíhala formou aktivní instalace.
+        </Text>
+      </View>
+      <View style={{ height: 14, backgroundColor: BLACK }} />
 
       {/* Řádky */}
       {ITEMS.map((item) => (
@@ -241,18 +247,19 @@ export const OpenCallPDF = () => (
 
       {/* Kontakt */}
       <View style={s.contact}>
+        <Text style={{ fontSize: 7.5, fontWeight: 700, letterSpacing: 1.5, textTransform: "uppercase", color: BLACK, marginBottom: 8 }}>Přihláška</Text>
         <Text style={s.contactText}>
-          Jméno nebo pseudonym, náhled díla nebo série, kolik zastávek chcete obsadit.
+          Pošlete nám: jméno nebo pseudonym, náhled díla nebo série, kolik zastávek chcete obsadit. Nemusíte mít hotová díla, stačí záměr a ukázka.
         </Text>
-        <Text style={s.contactEmail}>tramgallery@protonmail.com</Text>
-        <Text style={s.deadline}>Deadline: [DOPLNIT]</Text>
+        <Text style={s.contactEmail}>GalerieOznacnik@protonmail.com</Text>
+        <Text style={s.deadline}>Deadline: 14. 4. 2026</Text>
       </View>
 
       {/* Footer */}
       <View style={s.blackBar6} />
       <View style={s.footer}>
-        <Text style={s.footerTG}>TG</Text>
-        <Text style={s.footerRight}>tramgallery.cz{"\n"}Praha</Text>
+        <Text style={s.footerTG}>O</Text>
+        <Text style={s.footerRight}>oznacnik.github.io{"\n"}Praha</Text>
       </View>
       <View style={s.redBar} />
     </Page>

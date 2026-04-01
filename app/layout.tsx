@@ -3,7 +3,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 
 export const metadata: Metadata = {
-  title: "Tram Gallery",
+  title: "Galerie Označník",
   description: "Galerie současného umění v prázdných reklamních rámečcích na pražských tramvajových zastávkách.",
 };
 

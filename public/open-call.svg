@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 597.37 846.3">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 7.5px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        font-family: Helvetica-Bold, Helvetica;
+        font-weight: 700;
+      }
+
+      .cls-1, .cls-2, .cls-4, .cls-5, .cls-6, .cls-7, .cls-12, .cls-8, .cls-13, .cls-9, .cls-10, .cls-11, .cls-14 {
+        isolation: isolate;
+      }
+
+      .cls-2, .cls-15 {
+        letter-spacing: .2em;
+      }
+
+      .cls-2, .cls-9 {
+        font-size: 12px;
+      }
+
+      .cls-16 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        font-size: 18px;
+        text-decoration: underline;
+      }
+
+      .cls-3, .cls-4, .cls-17, .cls-6, .cls-8 {
+        fill: #e3000b;
+      }
+
+      .cls-4 {
+        font-size: 36px;
+      }
+
+      .cls-5, .cls-8 {
+        font-size: 80px;
+      }
+
+      .cls-6 {
+        font-size: 52px;
+      }
+
+      .cls-18 {
+        letter-spacing: .27em;
+      }
+
+      .cls-19 {
+        letter-spacing: .29em;
+      }
+
+      .cls-20, .cls-12 {
+        letter-spacing: .21em;
+      }
+
+      .cls-21 {
+        letter-spacing: .2em;
+      }
+
+      .cls-22 {
+        letter-spacing: .16em;
+      }
+
+      .cls-23 {
+        letter-spacing: .16em;
+      }
+
+      .cls-24, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        font-size: 22px;
+      }
+
+      .cls-12, .cls-13, .cls-14 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-12, .cls-10, .cls-11, .cls-14 {
+        fill: #999;
+      }
+
+      .cls-12, .cls-10, .cls-14 {
+        font-size: 7px;
+      }
+
+      .cls-13 {
+        fill: #333;
+        font-size: 9px;
+      }
+
+      .cls-25 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-26 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-27 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-28 {
+        letter-spacing: -.13em;
+      }
+
+      .cls-29 {
+        letter-spacing: -.11em;
+      }
+
+      .cls-30 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-31 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-32 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-33 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-34 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-35 {
+        letter-spacing: -.04em;
+      }
+
+      .cls-36 {
+        letter-spacing: .13em;
+      }
+
+      .cls-11 {
+        font-size: 11px;
+      }
+    </style>
+  </defs>
+  <g id="red-bar-top">
+    <rect class="cls-17" x="1" width="595" height="8"/>
+  </g>
+  <g id="hero">
+    <rect class="cls-24" x="1" y="8" width="595" height="140"/>
+    <text class="cls-10" transform="translate(39.75 16.77)"><tspan class="cls-19" x="0" y="0">GALERIE OZNAČNÍK OPEN CAL</tspan><tspan class="cls-18" x="157.99" y="0">L</tspan></text>
+    <text class="cls-5" transform="translate(37 98)"><tspan x="0" y="0">VÝZ</tspan><tspan class="cls-26" x="155.59" y="0">V</tspan><tspan class="cls-35" x="203.05" y="0">A</tspan></text>
+    <text class="cls-8" transform="translate(37 143)"><tspan x="0" y="0">ZLOBIT</tspan></text>
+  </g>
+  <g id="black-bar-1">
+    <rect x="1" y="153" width="595" height="6"/>
+  </g>
+  <g id="perex">
+    <polygon points="1 159 596 159 596.68 233.73 1.68 233.73 1 159"/>
+    <text class="cls-7" transform="translate(38 189)"><tspan class="cls-30" x="0" y="0">HLEDÁME</tspan><tspan class="cls-27" x="105.39" y="0"> </tspan><tspan class="cls-30" x="110.21" y="0">AU</tspan><tspan class="cls-34" x="141.02" y="0">T</tspan><tspan class="cls-30" x="153.58" y="0">O</tspan><tspan class="cls-27" x="170.21" y="0">R</tspan><tspan class="cls-33" x="184.81" y="0">Y</tspan><tspan class="cls-30" x="198.61" y="0" xml:space="preserve"> PRO KOLEKTIVNÍ VÝS</tspan><tspan class="cls-25" x="432.68" y="0">TA</tspan><tspan class="cls-30" x="457.79" y="0">VU</tspan></text>
+    <text class="cls-7" transform="translate(39 217)"><tspan class="cls-30" x="0" y="0">V PRAŽSKÝCH TRAM</tspan><tspan class="cls-25" x="219.59" y="0">V</tspan><tspan class="cls-30" x="232.16" y="0">AJOVÝCH ZASTÁVKÁCH.</tspan></text>
+  </g>
+  <g id="black-bar-2">
+    <rect x="1" y="240.05" width="595" height="6"/>
+  </g>
+  <g id="intro-text">
+    <rect class="cls-24" x="1.34" y="269.82" width="595" height="80"/>
+    <text class="cls-13" transform="translate(40.34 282.45)"><tspan x="0" y="0">Galerie Označník je galerie současného umění, jejíž výstavní prostory jsou prázdné reklamní</tspan></text>
+    <text class="cls-13" transform="translate(40.34 296.45)"><tspan x="0" y="0">označníky pražských tramvajových zastávkek. Každý úsek linky je samostatná výstava.</tspan></text>
+    <text class="cls-13" transform="translate(40.34 314.45)"><tspan x="0" y="0">Chystáme další výstavu a hledáme autor</tspan><tspan class="cls-26" x="162.58" y="0">y</tspan><tspan x="166.42" y="0">, kteří chtějí vystavit ve veřejném prostoru.</tspan></text>
+    <text class="cls-13" transform="translate(40.34 328.45)"><tspan x="0" y="0">Bez galerie, bez white cube, bez poplatků. </tspan><tspan class="cls-32" x="171.11" y="0">V</tspan><tspan x="176.62" y="0">ernisáž by probíhala formou aktivní instalace.</tspan></text>
+  </g>
+  <g id="black-bar-3">
+    <rect x="1" y="365" width="596.37" height="14"/>
+  </g>
+  <g id="row-01">
+    <rect class="cls-24" x="1" y="382" width="595" height="96.29"/>
+    <line class="cls-16" x1="39.75" y1="379" x2="39.75" y2="475.29"/>
+    <text class="cls-4" transform="translate(5.3 403.84)"><tspan x="0" y="0">01</tspan></text>
+    <text class="cls-2" transform="translate(44 389.38)"><tspan x="0" y="0">CO HLEDÁME</tspan></text>
+    <text class="cls-13" transform="translate(43.86 403.84)"><tspan x="0" y="0">Autory pro kolektivní výstavu v pražských tramvajových zastávkách. Každý</tspan></text>
+    <text class="cls-13" transform="translate(43.86 417.84)"><tspan x="0" y="0">autor dostane blok zastávek na jedné lince. Díla budou vystavena v</tspan></text>
+    <text class="cls-13" transform="translate(43.86 431.84)"><tspan x="0" y="0">reklamních rámečcích, za sklem, přímo v ulici.</tspan></text>
+  </g>
+  <g id="row-02">
+    <rect class="cls-24" x="1" y="446.29" width="595" height="82"/>
+    <line class="cls-16" x1="1" y1="446.29" x2="596" y2="446.29"/>
+    <line class="cls-16" x1="39.75" y1="443.29" x2="39.75" y2="525.29"/>
+    <text class="cls-4" transform="translate(1 472.81)"><tspan x="0" y="0">02</tspan></text>
+    <text class="cls-2" transform="translate(43.86 457.84)"><tspan x="0" y="0">FORMÁT</tspan></text>
+    <text class="cls-13" transform="translate(43.86 470.84)"><tspan x="0" y="0">Papí</tspan><tspan class="cls-32" x="18.51" y="0">r</tspan><tspan x="21.02" y="0">, formát</tspan><tspan class="cls-32" x="51.53" y="0"> </tspan><tspan x="53.53" y="0">A3 .</tspan></text>
+    <text class="cls-13" transform="translate(43.86 484.84)"><tspan x="0" y="0">Série, variace, nebo pokaždé něco jiného. Dodáte hotové tisk</tspan><tspan class="cls-26" x="244.66" y="0">y</tspan><tspan x="248.49" y="0">,</tspan></text>
+    <text class="cls-13" transform="translate(43.86 498.84)"><tspan x="0" y="0">nainstalujeme je společně.</tspan></text>
+  </g>
+  <g id="row-03">
+    <rect class="cls-24" x="1" y="528.29" width="595" height="68"/>
+    <line class="cls-16" x1="1" y1="528.29" x2="596" y2="528.29"/>
+    <line class="cls-16" x1="39.75" y1="525.29" x2="39.75" y2="593.29"/>
+    <text class="cls-4" transform="translate(1 554.23)"><tspan x="0" y="0">03</tspan></text>
+    <text class="cls-9" transform="translate(43.86 539.84)"><tspan class="cls-15" x="0" y="0">INS</tspan><tspan class="cls-36" x="27.2" y="0">T</tspan><tspan class="cls-15" x="36.05" y="0">ALACE</tspan></text>
+    <text class="cls-13" transform="translate(43.86 552.84)"><tspan x="0" y="0">Společná vernisáž. Projdeme trasu a každý nainstaluje svá díla do označníků.</tspan></text>
+    <text class="cls-13" transform="translate(44 565.71)"><tspan x="0" y="0">Datum a trasa budou upřesněn</tspan><tspan class="cls-26" x="124.08" y="0">y</tspan><tspan x="127.92" y="0">.</tspan></text>
+  </g>
+  <g id="row-04">
+    <rect class="cls-24" x="1" y="596.29" width="595" height="68"/>
+    <line class="cls-16" x1="1" y1="596.29" x2="596" y2="596.29"/>
+    <line class="cls-16" x1="39.75" y1="593.29" x2="39.75" y2="661.29"/>
+    <text class="cls-4" transform="translate(1 621.59)"><tspan x="0" y="0">04</tspan></text>
+    <text class="cls-2" transform="translate(43.86 607.84)"><tspan x="0" y="0">ŽIVOTNOST</tspan></text>
+    <text class="cls-13" transform="translate(43.86 620.84)"><tspan x="0" y="0">Přibližně týden. Výstavu sundá DP</tspan><tspan class="cls-28" x="138.07" y="0">P</tspan><tspan x="142.91" y="0">.</tspan><tspan class="cls-31" x="145.42" y="0"> </tspan><tspan class="cls-29" x="147.76" y="0">T</tspan><tspan x="152.26" y="0">o je součást konceptu.</tspan></text>
+    <text class="cls-13" transform="translate(43.86 634.84)"><tspan x="0" y="0">Díla žijí ve veřejném prostoru a sdílejí jeho osud.</tspan></text>
+  </g>
+  <g id="black-bar-rows-bottom">
+    <rect x="1" y="658.29" width="595" height="4"/>
+  </g>
+  <g id="contact">
+    <rect class="cls-24" x="1.68" y="661.2" width="595" height="99"/>
+    <text class="cls-1" transform="translate(39.68 675.2)"><tspan class="cls-21" x="0" y="0">PŘIHLÁŠK</tspan><tspan class="cls-22" x="50.33" y="0">A</tspan></text>
+    <text class="cls-13" transform="translate(39.68 693.2)"><tspan x="0" y="0">Pošlete nám: jméno nebo pseudonym, náhled díla nebo série, kolik zastávek chcete obsadit.</tspan></text>
+    <text class="cls-13" transform="translate(39.68 707.2)"><tspan x="0" y="0">Nemusíte mít hotová díla, stačí záměr a ukázka.</tspan></text>
+    <text class="cls-3" transform="translate(39.68 733.2)"><tspan x="0" y="0">GalerieOznacnik@protonmail.com</tspan></text>
+    <text class="cls-11" transform="translate(39.68 751.2)"><tspan x="0" y="0">Deadline: 14. 4. 2026</tspan></text>
+  </g>
+  <g id="black-bar-footer">
+    <rect x="1" y="767.29" width="595" height="6"/>
+  </g>
+  <g id="footer">
+    <rect class="cls-24" x="1" y="773.29" width="595" height="60"/>
+    <text class="cls-6" transform="translate(37 821.29)"><tspan x="0" y="0">O</tspan></text>
+    <text class="cls-12" transform="translate(476.63 801.29)"><tspan x="0" y="0">oznacnik.github.io</tspan></text>
+    <text class="cls-14" transform="translate(528.38 815.29)"><tspan class="cls-20" x="0" y="0">PRAH</tspan><tspan class="cls-23" x="25.44" y="0">A</tspan></text>
+  </g>
+  <g id="red-bar-bottom">
+    <rect class="cls-17" y="826" width="595" height="8"/>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Výzva Zlobit — Tram Gallery",
+  title: "Výzva Zlobit — Galerie Označník",
 };
 
 export default function OpenCallPage() {
@@ -8,7 +8,7 @@ export default function OpenCallPage() {
 
       {/* Hero */}
       <section className="px-6 pt-12 pb-0">
-        <div className="type-label mb-4" style={{ color: "#bbb" }}>Tram Gallery — Praha</div>
+        <div className="type-label mb-4" style={{ color: "#bbb" }}>Galerie Označník — Praha</div>
         <div
           className="font-black uppercase leading-none"
           style={{ fontSize: "clamp(64px, 14vw, 200px)", letterSpacing: "-0.05em", lineHeight: 0.85 }}
@@ -56,8 +56,8 @@ export default function OpenCallPage() {
         ].map((item) => (
           <div key={item.num} className="flex border-b-4 border-black">
             <div
-              className="font-black leading-none py-8 shrink-0 border-r-4 border-black flex items-center justify-center"
-              style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.04em", color: "#E3000B", width: "clamp(100px, 14vw, 160px)" }}
+              className="font-black leading-none pt-8 pb-8 shrink-0 border-r-4 border-black flex items-start justify-start pl-6"
+              style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.04em", color: "#E3000B", width: "clamp(70px, 10vw, 100px)" }}
             >
               {item.num}
             </div>

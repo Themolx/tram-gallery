@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Každý může — Tram Gallery",
+  title: "Každý může — Galerie Označník",
 };
 
 const DPP = "#E3000B";
@@ -28,7 +28,7 @@ const STEPS = [
   {
     num: "05",
     title: "Zdokumentujte",
-    text: "Vyfoťte instalaci. Pokud chcete dílo zařadit do programu Tram Gallery, napište nám název zastávky, linku, datum a fotku.",
+    text: "Vyfoťte instalaci. Pokud chcete dílo zařadit do programu Galerie Označník, napište nám název zastávky, linku, datum a fotku.",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function ManualPage() {
         {/* Hero */}
         <div style={{ borderBottom: "4px solid black", padding: "40px 48px 32px" }}>
           <div style={{ fontSize: 11, letterSpacing: "0.14em", textTransform: "uppercase", color: "#aaa", marginBottom: 12, fontFamily: "inherit", fontWeight: 700 }}>
-            Tram Gallery — Manuál instalace
+            Galerie Označník — Manuál instalace
           </div>
           <div
             style={{
@@ -75,7 +75,7 @@ export default function ManualPage() {
         {/* Perex */}
         <div style={{ borderBottom: "4px solid black", padding: "32px 48px", background: "#000", color: "#fff" }}>
           <p style={{ fontFamily: "inherit", fontWeight: 900, fontSize: "clamp(16px, 2.5vw, 24px)", maxWidth: 720, letterSpacing: "-0.01em", lineHeight: 1.3, margin: 0 }}>
-            Tram Gallery je otevřená galerie bez kurátora. Výstavní prostory jsou prázdné reklamní rámečky na pražských tramvajových zastávkách. Pokud je rámeček prázdný nebo obsahuje reklamu, je váš.{" "}
+            Galerie Označník je otevřená galerie bez kurátora. Výstavní prostory jsou prázdné reklamní rámečky na pražských tramvajových zastávkách. Pokud je rámeček prázdný nebo obsahuje reklamu, je váš.{" "}
             <span style={{ color: DPP }}>Stačí papír, šroubovák a něco, co chcete říct.</span>
           </p>
         </div>
@@ -142,7 +142,7 @@ export default function ManualPage() {
         {/* Footer */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 48px", borderBottom: "4px solid black" }}>
           <div style={{ fontFamily: "inherit", fontWeight: 900, fontSize: "clamp(36px, 8vw, 64px)", letterSpacing: "-0.06em", color: DPP, lineHeight: 0.8 }}>
-            TG
+            O
           </div>
           <div style={{ fontFamily: "inherit", fontWeight: 700, fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "#aaa", textAlign: "right" }}>
             tramgallery.cz<br />Praha

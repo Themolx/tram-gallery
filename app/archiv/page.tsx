@@ -3,7 +3,7 @@ import { getExhibitionsByStatus } from "@/lib/db";
 import type { Exhibition } from "@/types";
 
 export const metadata = {
-  title: "Archiv výstav — Tram Gallery",
+  title: "Archiv výstav — Galerie Označník",
 };
 
 function durationDays(openedAt: string, closedAt: string): number {
@@ -85,7 +85,7 @@ export default async function ArchivPage() {
   return (
     <div>
       <div className="px-6 pt-12 pb-8">
-        <div className="type-label mb-4" style={{ color: "#bbb" }}>Tram Gallery</div>
+        <div className="type-label mb-4" style={{ color: "#bbb" }}>Galerie Označník</div>
         <div
           className="font-black uppercase leading-none"
           style={{ fontSize: "clamp(48px, 10vw, 120px)", letterSpacing: "-0.04em", lineHeight: 0.85 }}

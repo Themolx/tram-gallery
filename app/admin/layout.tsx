@@ -29,7 +29,7 @@ export default async function AdminLayout({
                 className="type-label no-underline"
                 style={{ color: "var(--dpp)", letterSpacing: "0.16em" }}
               >
-                TG ADMIN
+                O ADMIN
               </Link>
               <div
                 className="h-4 w-px"

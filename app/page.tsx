@@ -78,26 +78,22 @@ export default async function Home() {
     <div>
       {/* Hero */}
       <section className="px-6 pt-12 pb-0 overflow-hidden">
-        <div className="flex items-start gap-6">
-          <div className="rotate-label type-label mt-2 shrink-0" style={{ color: "#bbb" }}>
-            Praha — Galerie současného umění
-          </div>
-          <div className="flex-1">
-            <div
-              className="font-black uppercase leading-none"
-              style={{
-                fontSize: "clamp(56px, 12vw, 140px)",
-                letterSpacing: "-0.04em",
-                lineHeight: 0.85,
-              }}
-            >
-              TRAM<br />
-              GALLERY
-            </div>
-          </div>
+        <div className="type-label mb-4" style={{ color: "#bbb" }}>
+          Praha — Galerie současného umění
+        </div>
+        <div
+          className="font-black uppercase leading-none"
+          style={{
+            fontSize: "clamp(56px, 12vw, 140px)",
+            letterSpacing: "-0.04em",
+            lineHeight: 0.85,
+          }}
+        >
+          GALERIE<br />
+          <span style={{ color: "#E3000B" }}>OZNAČNÍK</span>
         </div>
 
-        <div className="mt-8 max-w-2xl ml-12">
+        <div className="mt-8 max-w-2xl">
           <div className="bar bar-thin mb-4" />
           <p className="type-body" style={{ fontWeight: 400 }}>
             Výstavní prostory galerie jsou prázdné reklamní rámečky na pražských tramvajových zastávkách.
