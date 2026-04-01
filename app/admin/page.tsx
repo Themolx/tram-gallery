@@ -104,7 +104,7 @@ export default async function AdminDashboard() {
                     minWidth: "2.5ch",
                   }}
                 >
-                  {ex.lineNumber}
+                  {ex.lineNumbers.join("·")}
                 </div>
 
                 <div className="flex-1">

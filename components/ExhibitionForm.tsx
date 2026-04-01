@@ -27,7 +27,7 @@ export default function ExhibitionForm({
   const [title, setTitle] = useState(initial?.title ?? "");
   const [subtitle, setSubtitle] = useState(initial?.subtitle ?? "");
   const [color, setColor] = useState(initial?.color ?? "#E3000B");
-  const [lineNumber, setLineNumber] = useState(String(initial?.lineNumber ?? ""));
+  const [lineNumber, setLineNumber] = useState(initial?.lineNumbers?.join(", ") ?? "");
   const [direction, setDirection] = useState(initial?.direction ?? "");
   const [startStationId, setStartStationId] = useState(initial?.startStationId ?? "");
   const [endStationId, setEndStationId] = useState(initial?.endStationId ?? "");
@@ -41,9 +41,9 @@ export default function ExhibitionForm({
   const [exStations, setExStations] = useState<ExhibitionStation[]>(initialStations);
 
   // Derived: stations that serve the selected line
-  const lineNum = parseInt(lineNumber);
+  const lineNums = lineNumber.split(",").map((n) => parseInt(n.trim())).filter(Boolean);
   const lineStations = allStations
-    .filter((s) => s.lines.includes(lineNum))
+    .filter((s) => lineNums.some((n) => s.lines.includes(n)))
     .sort((a, b) => a.name.localeCompare(b.name, "cs"));
 
   const [loading, setLoading] = useState(false);
@@ -55,7 +55,7 @@ export default function ExhibitionForm({
       const start = allStations.find((s) => s.id === startStationId);
       const end = allStations.find((s) => s.id === endStationId);
       if (start && end) {
-        setTitle(`LINKA ${lineNumber}: ${start.name.toUpperCase()} — ${end.name.toUpperCase()}`);
+        setTitle(`LINKY ${lineNumber.replace(/,\s*/g, "·")}: ${start.name.toUpperCase()} — ${end.name.toUpperCase()}`);
       }
     }
   }, [lineNumber, startStationId, endStationId, allStations, title]);
@@ -108,7 +108,7 @@ export default function ExhibitionForm({
         title,
         subtitle,
         color,
-        lineNumber: parseInt(lineNumber),
+        lineNumbers: lineNumber.split(",").map((n) => parseInt(n.trim())).filter(Boolean),
         direction,
         startStationId,
         endStationId,

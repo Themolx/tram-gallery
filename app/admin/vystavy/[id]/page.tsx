@@ -38,7 +38,7 @@ export default async function EditVystavaPage({
     <div style={{ background: "#000", minHeight: "100vh" }}>
       <div className="px-6 pt-8 pb-4" style={{ borderBottom: "4px solid #111" }}>
         <div className="type-label mb-2" style={{ color: "#555" }}>
-          Linka {exhibition.lineNumber}
+          Linka {exhibition.lineNumbers.join(" · ")}
         </div>
         <h1
           className="font-black uppercase"

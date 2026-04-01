@@ -77,7 +77,7 @@ export default async function ExhibitionPage({
               color: "rgba(0,0,0,0.4)",
             }}
           >
-            LINKA {exhibition.lineNumber}
+            LINKA {exhibition.lineNumbers.join(" · ")}
           </div>
 
           <div className="flex-1">
@@ -147,7 +147,7 @@ export default async function ExhibitionPage({
                 className="font-black ex-text"
                 style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.03em", lineHeight: 1 }}
               >
-                {exhibition.lineNumber}
+                {exhibition.lineNumbers.join(" · ")}
               </div>
             </div>
             <div>
@@ -198,7 +198,7 @@ export default async function ExhibitionPage({
               />
             ) : (
               <div className="type-body" style={{ fontWeight: 400 }}>
-                Nastupte na tramvajovou linku {exhibition.lineNumber} směr {exhibition.direction}.{" "}
+                Nastupte na tramvajovou linku {exhibition.lineNumbers.join(", ")} směr {exhibition.direction}.{" "}
                 {startStation && `Nastupte nejlépe na zastávce ${startStation.name}.`}{" "}
                 {endStation && `Vystupte na zastávce ${endStation.name}.`}{" "}
                 Galerie je otevřena 0:00–24:00. Vstupné: zdarma (jízdenka DPP).
@@ -222,7 +222,7 @@ export default async function ExhibitionPage({
 
       <div className="bar bar-thick" />
       <div className="px-6 py-4 flex justify-between items-center">
-        <Link href="/vystavy" className="nav-link">← Všechny výstavy</Link>
+        <Link href="/" className="nav-link">← Všechny výstavy</Link>
         <Link href="/navsteva" className="nav-link">Jak navštívit →</Link>
       </div>
       <div className="bar" />

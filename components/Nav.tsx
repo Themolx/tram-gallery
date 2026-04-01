@@ -3,9 +3,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/vystavy", label: "Výstavy" },
-  { href: "/navsteva", label: "Návštěva" },
-  { href: "/instalace", label: "Instalace" },
+  { href: "/", label: "Výstavy" },
+  { href: "/archiv", label: "Archiv" },
+  { href: "/open-call", label: "Open Call" },
   { href: "/o-galerii", label: "O galerii" },
 ];
 
@@ -34,7 +34,7 @@ export default function Nav() {
             <Link
               key={l.href}
               href={l.href}
-              className={`nav-link ${pathname.startsWith(l.href) ? "active" : ""}`}
+              className={`nav-link ${(l.href === "/" ? pathname === "/" : pathname.startsWith(l.href)) ? "active" : ""}`}
             >
               {l.label}
             </Link>

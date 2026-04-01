@@ -14,7 +14,7 @@ export interface Exhibition {
   subtitle?: string;           // optional claim / název výstavy
   artist?: string;             // jméno umělce/ce
   color: string;               // HEX barva výstavy
-  lineNumber: number;          // číslo tramvajové linky
+  lineNumbers: number[];       // čísla tramvajových linek (jedna nebo více)
   direction: string;           // "směr Lehovec"
   startStationId: string;
   endStationId: string;

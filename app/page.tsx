@@ -3,6 +3,8 @@ import { getExhibitionsByStatus } from "@/lib/db";
 import type { Exhibition } from "@/types";
 
 function ExhibitionCard({ ex }: { ex: Exhibition }) {
+  const route = ex.title.replace(/^LINK[AY]\s[\d·\s]+:\s*/i, "");
+
   return (
     <Link
       href={`/vystavy/${ex.id}`}
@@ -10,46 +12,49 @@ function ExhibitionCard({ ex }: { ex: Exhibition }) {
       style={{ "--ex-color": ex.color } as React.CSSProperties}
     >
       <div className="frame overflow-hidden">
-        <div className="h-3 ex-bg" />
-        <div className="p-6 flex gap-6 items-start">
-          <div
-            className="ex-text font-black leading-none shrink-0"
-            style={{ fontSize: "clamp(48px, 6vw, 80px)", letterSpacing: "-0.04em" }}
-          >
-            {ex.lineNumber}
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="type-label mb-2" style={{ color: "#666" }}>
-              {ex.status === "current"
-                ? "Probíhá"
-                : ex.status === "upcoming"
-                ? "Připravuje se"
-                : "Ukončeno"}
-              {" · "}
-              {new Date(ex.openedAt).toLocaleDateString("cs-CZ", {
-                day: "numeric",
-                month: "numeric",
-                year: "numeric",
-              })}
-              {ex.closedAt
-                ? ` — ${new Date(ex.closedAt).toLocaleDateString("cs-CZ", { day: "numeric", month: "numeric", year: "numeric" })}`
-                : ex.status === "current"
-                ? " — probíhá"
-                : ""}
+        <div className="h-2 ex-bg" />
+        <div className="p-6">
+          {/* Řádek 1: badges + autor */}
+          <div className="flex items-center gap-3 mb-3 flex-wrap">
+            <div className="flex items-center gap-1">
+              {ex.lineNumbers.map((n) => (
+                <div
+                  key={n}
+                  className="font-black leading-none flex items-center justify-center shrink-0"
+                  style={{
+                    fontSize: "clamp(11px, 1.4vw, 15px)",
+                    letterSpacing: "-0.01em",
+                    background: ex.color,
+                    color: "#fff",
+                    width: "clamp(24px, 3vw, 32px)",
+                    height: "clamp(24px, 3vw, 32px)",
+                  }}
+                >
+                  {n}
+                </div>
+              ))}
             </div>
-            <h2
-              className="font-black uppercase leading-none"
-              style={{ fontSize: "clamp(18px, 2.5vw, 28px)", letterSpacing: "-0.02em" }}
-            >
-              {ex.title}
-            </h2>
-            {ex.subtitle && (
-              <p className="mt-2" style={{ fontSize: 12, color: "#666", letterSpacing: "0.04em" }}>
-                {ex.subtitle}
-              </p>
+            {ex.artist && ex.artist !== "—" && (
+              <span className="type-label" style={{ color: "#888" }}>{ex.artist}</span>
             )}
           </div>
-          <div className="type-label shrink-0" style={{ color: "#aaa" }}>→</div>
+
+          {/* Řádek 2: název výstavy — dominantní */}
+          <h2
+            className="font-black uppercase leading-none"
+            style={{ fontSize: "clamp(28px, 5vw, 64px)", letterSpacing: "-0.04em", lineHeight: 0.9 }}
+          >
+            {ex.subtitle ?? ex.title}
+          </h2>
+
+          {/* Řádek 3: trasa · datum */}
+          <div className="flex items-center gap-2 mt-3 flex-wrap">
+            <span className="type-label" style={{ color: "#aaa" }}>{route}</span>
+            <span className="type-label" style={{ color: "#ddd" }}>·</span>
+            <span className="type-label" style={{ color: "#aaa" }}>
+              {new Date(ex.openedAt).toLocaleDateString("cs-CZ", { day: "numeric", month: "numeric", year: "numeric" })}
+            </span>
+          </div>
         </div>
       </div>
     </Link>
@@ -66,7 +71,7 @@ export default async function Home() {
       getExhibitionsByStatus("upcoming"),
     ]);
   } catch {
-    // Firebase not configured yet
+    // static data fallback
   }
 
   return (
@@ -81,7 +86,7 @@ export default async function Home() {
             <div
               className="font-black uppercase leading-none"
               style={{
-                fontSize: "clamp(72px, 18vw, 220px)",
+                fontSize: "clamp(56px, 12vw, 140px)",
                 letterSpacing: "-0.04em",
                 lineHeight: 0.85,
               }}
@@ -105,32 +110,22 @@ export default async function Home() {
 
       <div className="bar bar-thick mt-12" />
 
-      {/* Current exhibitions */}
+      {/* Aktuální výstavy */}
       <section className="px-6 py-12">
         <div className="flex items-baseline gap-6 mb-8">
           <h1 className="type-lg">Aktuální výstavy</h1>
           {current.length > 0 && (
             <span
               className="font-black"
-              style={{
-                fontSize: "clamp(40px, 6vw, 80px)",
-                color: "var(--dpp)",
-                letterSpacing: "-0.04em",
-                lineHeight: 1,
-              }}
+              style={{ fontSize: "clamp(40px, 6vw, 80px)", color: "var(--dpp)", letterSpacing: "-0.04em", lineHeight: 1 }}
             >
               {current.length}
             </span>
           )}
         </div>
-
         {current.length === 0 ? (
           <div className="frame p-8">
-            <p className="type-label" style={{ color: "#aaa" }}>
-              {process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID
-                ? "Žádné aktuální výstavy"
-                : "Firebase není nakonfigurovaný — doplňte .env.local"}
-            </p>
+            <p className="type-label" style={{ color: "#aaa" }}>Žádné aktuální výstavy</p>
           </div>
         ) : (
           <div className="flex flex-col gap-4">
@@ -160,8 +155,8 @@ export default async function Home() {
         <span className="type-label" style={{ color: "#aaa" }}>
           Otevřeno 0:00–24:00 · Vstup zdarma (jízdenka DPP)
         </span>
-        <Link href="/vystavy" className="nav-link">
-          Všechny výstavy →
+        <Link href="/archiv" className="nav-link">
+          Archiv výstav →
         </Link>
       </div>
       <div className="bar" />
