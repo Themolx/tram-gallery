@@ -151,12 +151,6 @@ export default async function ExhibitionPage({
               </div>
             </div>
             <div>
-              <div className="type-label mb-1" style={{ color: "#888" }}>Směr</div>
-              <div className="type-md" style={{ fontSize: "clamp(16px, 2vw, 20px)" }}>
-                {exhibition.direction}
-              </div>
-            </div>
-            <div>
               <div className="type-label mb-1" style={{ color: "#888" }}>Úsek</div>
               <div className="type-md" style={{ fontSize: "clamp(16px, 2vw, 20px)" }}>
                 {startStation?.name ?? "—"} — {endStation?.name ?? "—"}
@@ -168,7 +162,7 @@ export default async function ExhibitionPage({
                 className="font-black ex-text"
                 style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.03em", lineHeight: 1 }}
               >
-                {installationCount}
+                {installationCount * 2}
               </div>
             </div>
           </div>
@@ -186,25 +180,6 @@ export default async function ExhibitionPage({
             </div>
           )}
 
-          {/* Visit info */}
-          <div className="border-t-4 border-black pt-8">
-            <div className="type-label mb-4" style={{ color: "#888" }}>Jak navštívit</div>
-            {exhibition.visitInfo ? (
-              <div
-                className="prose-gallery"
-                dangerouslySetInnerHTML={{
-                  __html: `<p>${renderMarkdown(exhibition.visitInfo)}</p>`,
-                }}
-              />
-            ) : (
-              <div className="type-body" style={{ fontWeight: 400 }}>
-                Nastupte na tramvajovou linku {exhibition.lineNumbers.join(", ")} směr {exhibition.direction}.{" "}
-                {startStation && `Nastupte nejlépe na zastávce ${startStation.name}.`}{" "}
-                {endStation && `Vystupte na zastávce ${endStation.name}.`}{" "}
-                Galerie je otevřena 0:00–24:00. Vstupné: zdarma (jízdenka DPP).
-              </div>
-            )}
-          </div>
         </div>
 
         {/* Right: stop diagram */}
@@ -223,7 +198,7 @@ export default async function ExhibitionPage({
       <div className="bar bar-thick" />
       <div className="px-6 py-4 flex justify-between items-center">
         <Link href="/" className="nav-link">← Všechny výstavy</Link>
-        <Link href="/navsteva" className="nav-link">Jak navštívit →</Link>
+        <Link href="/o-galerii" className="nav-link">Jak instalovat →</Link>
       </div>
       <div className="bar" />
     </div>

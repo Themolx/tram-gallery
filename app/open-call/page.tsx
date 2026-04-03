@@ -89,11 +89,11 @@ export default function OpenCallPage() {
           <div>
             <div className="type-label mb-2" style={{ color: "#888" }}>Kam</div>
             <a
-              href="mailto:tramgallery@protonmail.com"
+              href="mailto:GalerieOznacnik@protonmail.com"
               className="font-black"
               style={{ fontSize: "clamp(18px, 3vw, 36px)", color: "#E3000B", textDecoration: "underline", letterSpacing: "-0.03em" }}
             >
-              tramgallery@protonmail.com
+              GalerieOznacnik@protonmail.com
             </a>
           </div>
           <div>
@@ -102,7 +102,7 @@ export default function OpenCallPage() {
               className="font-black"
               style={{ fontSize: "clamp(18px, 3vw, 36px)", letterSpacing: "-0.03em", color: "#ccc" }}
             >
-              [DOPLŇ]
+              25. 4. 2026
             </div>
           </div>
         </div>
@@ -113,14 +113,24 @@ export default function OpenCallPage() {
       {/* PDF download */}
       <div className="px-6 py-6 flex items-center justify-between border-b-4 border-black">
         <span className="type-label" style={{ color: "#aaa" }}>Verze pro tisk / sdílení</span>
-        <a
-          href="/api/open-call-pdf"
-          target="_blank"
-          className="font-black no-underline"
-          style={{ fontSize: "clamp(13px, 1.5vw, 16px)", letterSpacing: "-0.01em", color: "#E3000B", border: "3px solid #E3000B", padding: "8px 16px" }}
-        >
-          Stáhnout PDF →
-        </a>
+        <div className="flex gap-4">
+          <a
+            href="/api/open-call-pdf-v2"
+            target="_blank"
+            className="font-black no-underline"
+            style={{ fontSize: "clamp(13px, 1.5vw, 16px)", letterSpacing: "-0.01em", color: "#E3000B", border: "3px solid #E3000B", padding: "8px 16px" }}
+          >
+            PDF z webu →
+          </a>
+          <a
+            href="/api/open-call-pdf"
+            target="_blank"
+            className="font-black no-underline"
+            style={{ fontSize: "clamp(13px, 1.5vw, 16px)", letterSpacing: "-0.01em", color: "#999", border: "3px solid #ccc", padding: "8px 16px" }}
+          >
+            PDF v1
+          </a>
+        </div>
       </div>
       <div className="bar bar-thick" />
     </div>

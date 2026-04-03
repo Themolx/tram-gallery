@@ -31,10 +31,10 @@ export const EXHIBITIONS: Exhibition[] = [
     id: "ex-12-chomps",
     title: "LINKA 12: LEHOVEC — BALABENKA",
     subtitle: "Chomps",
-    artist: "Martin Tomek",
+    artist: "Ptáček",
     color: "#E3000B",
     lineNumbers: [12],
-    direction: "směr Balabenka",
+    direction: "",
     startStationId: "L12-01",
     endStationId: "L12-13",
     status: "current",
@@ -45,7 +45,7 @@ export const EXHIBITIONS: Exhibition[] = [
 Výstava Chomps obsazuje volné reklamní rámečky podél celé trasy. Tisky formátu A3 jsou vloženy za plastový kryt označníku bez lepidla. Motiv se opakuje a variuje jako rytmus kol na kolejích.
 
 Díla existují dokud je město neodstraní.`,
-    visitInfo: `Nastupte na tramvaj linky 12 na zastávce Lehovec, směr Balabenka. Díla jsou v reklamních rámečcích na označnících zastávek. Výstava končí na Balabence.`,
+    visitInfo: `Nastupte na tramvaj linky 12 na zastávce Lehovec. Díla jsou v reklamních rámečcích na označnících zastávek — vždy 2 díla na zastávku, celkem 26 děl. Výstava končí na Balabence.`,
     createdAt: "2026-03-28T00:00:00.000Z",
   },
   {

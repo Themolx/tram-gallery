@@ -1,16 +1,8 @@
-import { getExhibitionsByStatus } from "@/lib/db";
-import type { Exhibition } from "@/types";
-
 export const metadata = {
   title: "O galerii — Galerie Označník",
 };
 
 const DPP = "#E3000B";
-
-const FRAME_FORMATS = [
-  { name: "A3", width: "29,7 cm", height: "42,0 cm", note: "Nejčastější formát.", w: 30, h: 42 },
-  { name: "A2", width: "42,0 cm", height: "59,4 cm", note: "Formát náhradní autobusové dopravy.", w: 42, h: 59 },
-];
 
 const STEPS = [
   {
@@ -40,14 +32,7 @@ const STEPS = [
   },
 ];
 
-export default async function OGaleriiPage() {
-  let exhibitions: Exhibition[] = [];
-  try {
-    exhibitions = await getExhibitionsByStatus("current");
-  } catch {
-    // static fallback
-  }
-
+export default function OGaleriiPage() {
   return (
     <div>
 
@@ -89,24 +74,6 @@ export default async function OGaleriiPage() {
           </div>
         </div>
 
-        <div className="mt-10 lg:mt-0 lg:pl-12">
-          <div className="type-label mb-6" style={{ color: "#888" }}>Informace</div>
-          <div className="flex flex-col gap-0">
-            {[
-              { label: "Umělci", value: "Martin Tomek, Tomáš Vrána, Michal Tancjura" },
-              { label: "Médium", value: "Paste-up, linoryt, tisk" },
-              { label: "Výstavní prostory", value: "Reklamní rámečky na pražských tramvajových zastávkách" },
-              { label: "Vstupné", value: "Zdarma (jízdenka DPP)" },
-              { label: "Otevírací doba", value: "0:00–24:00, denně" },
-              { label: "Lokalita", value: "Praha, Česká republika" },
-            ].map((item) => (
-              <div key={item.label} className="flex gap-6 py-4 border-b-4 border-black">
-                <div className="type-label shrink-0" style={{ color: "#888", width: 140 }}>{item.label}</div>
-                <div className="type-body flex-1" style={{ fontWeight: 700 }}>{item.value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
       <div className="bar bar-thick" />
@@ -148,21 +115,6 @@ export default async function OGaleriiPage() {
         </div>
       </div>
 
-      {exhibitions.length > 0 && (
-        <>
-          <div className="bar" />
-          <div className="px-6 py-8">
-            <div className="type-label mb-6" style={{ color: "#888" }}>Aktuálně probíhající výstavy</div>
-            <div className="flex flex-wrap gap-3">
-              {exhibitions.map((ex) => (
-                <a key={ex.id} href={`/vystavy/${ex.id}`} className="frame px-4 py-2 no-underline" style={{ borderColor: ex.color } as React.CSSProperties}>
-                  <span className="type-label" style={{ color: ex.color }}>Linka {ex.lineNumbers.join(" · ")} — {ex.title}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </>
-      )}
 
       <div className="bar bar-thick" />
 
@@ -187,34 +139,6 @@ export default async function OGaleriiPage() {
             <span style={{ color: DPP }}> Stačí papír, šroubovák a něco, co chcete říct.</span>
           </p>
         </div>
-      </div>
-
-      <div className="bar bar-thick" />
-
-      {/* ── FORMÁTY ───────────────────────────────────────────────────────── */}
-      <div className="px-6 pt-10 pb-0">
-        <h2 className="font-black uppercase leading-none mb-8" style={{ fontSize: "clamp(28px, 4vw, 48px)", letterSpacing: "-0.03em" }}>
-          Formáty rámečků
-        </h2>
-      </div>
-      <div className="grid lg:grid-cols-2">
-        {FRAME_FORMATS.map((fmt, i) => (
-          <div key={fmt.name} className="px-6 py-8 border-b-4 border-black" style={{ borderRight: i === 0 ? "4px solid black" : "none" }}>
-            <div className="font-black leading-none mb-6" style={{ fontSize: "clamp(80px, 14vw, 160px)", letterSpacing: "-0.05em", color: DPP, lineHeight: 0.85 }}>
-              {fmt.name}
-            </div>
-            <div className="flex items-end gap-6 mb-5">
-              <div style={{ width: Math.round(fmt.w * 1.3), height: Math.round(fmt.h * 1.3), background: "#000", flexShrink: 0, maxWidth: 65, maxHeight: 95 }} />
-              <div>
-                <div className="type-label mb-1" style={{ color: "#aaa" }}>Šířka x výška</div>
-                <div className="font-black" style={{ fontSize: "clamp(20px, 2.5vw, 28px)", letterSpacing: "-0.02em" }}>
-                  {fmt.width}<br />{fmt.height}
-                </div>
-              </div>
-            </div>
-            <p style={{ fontWeight: 400, fontSize: 14, color: "#555" }}>{fmt.note}</p>
-          </div>
-        ))}
       </div>
 
       <div className="bar bar-thick" />
@@ -252,11 +176,11 @@ export default async function OGaleriiPage() {
               Pošlete nám: název zastávky, číslo linky, datum instalace, fotku. Zařadíme vás do aktuální výstavy.
             </p>
             <a
-              href="mailto:tramgallery@protonmail.com"
+              href="mailto:GalerieOznacnik@protonmail.com"
               className="font-black"
               style={{ fontSize: "clamp(15px, 2vw, 22px)", color: DPP, textDecoration: "underline", letterSpacing: "-0.01em" }}
             >
-              tramgallery@protonmail.com
+              GalerieOznacnik@protonmail.com
             </a>
           </div>
           <div className="p-6 border-4 border-black">
@@ -268,14 +192,6 @@ export default async function OGaleriiPage() {
         </div>
       </div>
 
-      {/* ── TG MARK ───────────────────────────────────────────────────────── */}
-      <div className="bar bar-thick" />
-      <div className="px-6 py-8">
-        <div className="font-black leading-none" style={{ fontSize: "clamp(80px, 20vw, 240px)", letterSpacing: "-0.06em", color: DPP, lineHeight: 0.8 }}>
-          TG
-        </div>
-      </div>
-      <div style={{ background: DPP, height: 8 }} />
       <div className="bar bar-thick" />
     </div>
   );
